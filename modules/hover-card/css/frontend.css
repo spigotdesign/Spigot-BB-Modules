@@ -1,7 +1,88 @@
-.post-list {
-	
+.spigot-hover-card {
+    background-size: cover;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    position: relative;
 }
 
-.fl-module-<?php echo $id; ?> {
-	background-color: red;
+.spigot-hover-card:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: " " !important;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: .3s opacity ease;
+    z-index: 1;
 }
+
+.spigot-hover-card__content {
+	-webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-transform: translate3d(0,  30%,  0);
+    transform: translate3d(0,  30%,  0);
+    z-index: 3
+}
+.spigot-hover-card:hover .spigot-hover-card__content {
+	-webkit-transform: translate3d(0,  0,  0);
+    transform: translate3d(0,  0,  0);
+    display: block;
+    position: relative;
+    z-index: 3;
+}
+
+.spigot-hover-card a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+ 	z-index: 10;
+}
+
+.spigot-hover-card:hover:after {
+    opacity: 1;
+    content: " " !important;
+    display: block;
+}
+.spigot-hover-card .entry__header h2{
+	color: white;
+	font-size: 24px;
+	margin-bottom: 8px;
+	text-shadow: 0 0 8px 0 rgba(0,0,0, .5);
+}	
+
+.spigot-hover-card .entry__summary {
+	opacity: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-transform: translate3d(0,  50%,  0);
+    transform: translate3d(0,  50%,  0);
+    max-width: 600px;
+    margin: auto;
+}
+
+.spigot-hover-card:hover .entry__summary {
+	opacity: 1;
+    -webkit-transform: translate3d(0,  0,  0);
+    transform: translate3d(0,  0,  0);
+}
+
+
+.spigot-hover-card .entry__summary p {
+	color: white;
+}
+
+

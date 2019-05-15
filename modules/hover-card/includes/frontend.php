@@ -11,42 +11,37 @@
  */
 
 ?>
-<?php $post_feed = new WP_Query( 
+<?php
+$photo    = $module->get_data();
+$classes  = $module->get_classes();
+$src      = $module->get_src();
+$link     = $module->get_link();
+$alt      = $module->get_alt();
+$attrs    = $module->get_attributes();
+$filetype = pathinfo( $src, PATHINFO_EXTENSION );
+$rel      = $module->get_rel();
+?>
 
-	array( 
-		'post_type' => 'post', 
-		'posts_per_page' => $settings->post_items 
-		) 
-	); ?>
-				
-	<?php if ( $post_feed->have_posts() ) :?>
 
-		<div class='post-list'>
-				
-		<?php while ( $post_feed->have_posts() ) : $post_feed->the_post(); ?>
+<div class='spigot-hover-card' style="background-image: url(<?php echo $src; ?>);">
 
-			<article class="post-list__card">
+	<a href="<?php echo $settings->link; ?>"></a>
 
-				<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'post-thumb', [ 'class' => 'entry__image' ] ) ?></a>
+	<div class="spigot-hover-card__content">
 
-				<header class="entry__header">
-					<?php Hybrid\Post\display_title() ?>
-				</header>
+		<header class="entry__header">
+			<h2><?php echo esc_attr( $settings->heading ); ?></h2>
+		</header>
 
-				<div class="entry__summary">
-					<?php $content = get_the_content(); ?>
-					<?php echo wp_trim_words( $content , '17' ); ?>
-				</div>
+		<div class="entry__summary">
+			<?php global $wp_embed;
 
-				<footer class="entry__footer">
-					<?php Hybrid\Post\display_terms( [ 'taxonomy' => 'category' ] ) ?>
-					<?php Hybrid\Post\display_date() ?>
-				</footer>
+			echo wpautop( $wp_embed->autoembed( $settings->text ) );
 
-			</article>
-
-		<?php endwhile; ?>
-
+			?>
 		</div>
 
-	<?php endif; wp_reset_query(); ?>
+	</div>
+
+</div>
+
