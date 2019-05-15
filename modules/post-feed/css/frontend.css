@@ -1,6 +1,7 @@
 .spigot-post-list {
     display: flex;
     flex-flow: row wrap;
+    
 }
 
 .spigot-post-list__card {
@@ -8,9 +9,11 @@
     border-radius: 3px;
     box-shadow: 0 1px 3px 0 rgba(53, 69, 88, 0.2);
     padding: 20px;
+    padding-bottom: 30px;
     overflow: hidden;
     margin: 10px;
     position: relative;
+    flex: 0 1 100%;
 }
 
 .spigot-post-list__card img {
@@ -25,11 +28,11 @@
     margin-bottom: 0;
 }
 
-.spigot-post-list .entry__footer {
+.spigot-post-list__card .entry__footer {
     position: absolute;
     bottom: 0;
-    margin-left: -24px;
-    padding: 12px 24px;
+    margin-left: -20px;
+    padding: 12px 20px;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -45,8 +48,34 @@
     line-height: 2;
 }
 
-.spigot-post-list .entry__footer svg {
+.spigot-post-list__card .entry__summary {
+    margin-bottom: 30px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.spigot-post-list__card .entry__title h2 {
+    font-size: 20px;
+}
+
+.spigot-post-list__card .entry__footer svg {
     width: 30px;
     height: 30px;
     margin-bottom: 0;
+}
+
+@media (min-width: 600px) {
+    .spigot-post-list__card {
+        -ms-flex-preferred-size: calc(50% - 24px);
+        flex-basis: calc(50% - 24px);
+        width: calc(50% - 24px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .spigot-post-list__card {
+        -ms-flex-preferred-size: calc(33.33333% - 24px);
+        flex-basis: calc(33.33333% - 24px);
+        width: calc(33.33333% - 24px);
+    }
 }

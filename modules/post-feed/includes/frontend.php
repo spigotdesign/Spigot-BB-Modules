@@ -34,8 +34,8 @@
 				</header>
 
 				<div class="entry__summary">
-					<?php $content = get_the_content(); ?>
-					<?php echo wp_trim_words( $content , '17' ); ?>
+					<?php $content = wp_trim_words( get_the_content(), 17, '...'); ?>
+					<p><?php echo wpautop($content); ?></p>
 				</div>
 
 				<footer class="entry__footer">
