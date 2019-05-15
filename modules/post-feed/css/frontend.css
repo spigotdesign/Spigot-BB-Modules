@@ -1,0 +1,7 @@
+.post-list {
+	
+}
+
+.fl-module-<?php echo $id; ?> {
+	background-color: red;
+}
