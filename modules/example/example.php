@@ -17,6 +17,7 @@ class FLExampleModule extends FLBuilderModule {
             'name'          => __('Example', 'fl-builder'),
             'description'   => __('An example for coding new modules.', 'fl-builder'),
             'category'		=> __('Example Modules', 'fl-builder'),
+            'group'         => __('Spigot Modules', 'fl-builder'),
             'dir'           => SPIGOT_BB_MODULES_DIR . 'modules/example/',
             'url'           => SPIGOT_BB_MODULES_URL . 'modules/example/',
             'editor_export' => true, // Defaults to true and can be omitted.

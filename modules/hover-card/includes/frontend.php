@@ -21,11 +21,11 @@
 				
 	<?php if ( $post_feed->have_posts() ) :?>
 
-		<div class='spigot-post-list'>
+		<div class='post-list'>
 				
 		<?php while ( $post_feed->have_posts() ) : $post_feed->the_post(); ?>
 
-			<article class="spigot-post-list__card">
+			<article class="post-list__card">
 
 				<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'post-thumb', [ 'class' => 'entry__image' ] ) ?></a>
 

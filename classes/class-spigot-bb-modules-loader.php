@@ -30,10 +30,14 @@ class Spigot_BB_Modules_Loader {
 	 * Loads our custom modules.
 	 */
 	static public function load_modules() {
-		//require_once SPIGOT_BB_MODULES_DIR . 'modules/post-feed/post-feed.php';
+		require_once SPIGOT_BB_MODULES_DIR . 'modules/post-feed/post-feed.php';
+		require_once SPIGOT_BB_MODULES_DIR . 'modules/hover-card/hover-card.php';
 		require_once SPIGOT_BB_MODULES_DIR . 'modules/example/example.php';
 		
+		
 	}
+
+
 
 }
 

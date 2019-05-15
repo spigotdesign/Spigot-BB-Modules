@@ -1,7 +1,52 @@
-.post-list {
-	
+.spigot-post-list {
+    display: flex;
+    flex-flow: row wrap;
 }
 
-.fl-module-<?php echo $id; ?> {
-	background-color: red;
+.spigot-post-list__card {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 rgba(53, 69, 88, 0.2);
+    padding: 20px;
+    overflow: hidden;
+    margin: 10px;
+    position: relative;
+}
+
+.spigot-post-list__card img {
+    margin-top: -20px;
+    margin-right: -20px;
+    margin-left: -20px;
+    margin-bottom: 20px;
+    max-width: calc(100% + (20px * 2.2));
+}
+
+.spigot-post-list__card .entry__summary p:last-child {
+    margin-bottom: 0;
+}
+
+.spigot-post-list .entry__footer {
+    position: absolute;
+    bottom: 0;
+    margin-left: -24px;
+    padding: 12px 24px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 2;
+}
+
+.spigot-post-list .entry__footer svg {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0;
 }
